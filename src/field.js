@@ -3,6 +3,7 @@
 import * as sound from "./sound.js";
 
 const IMG_SIZE = 80;
+const FIELD_TOP_PADDING = 50;
 
 export const ItemType = Object.freeze({
   carrot: "carrot",
@@ -17,14 +18,20 @@ export class Field {
     this.fieldRect = this.field.getBoundingClientRect();
     // this.onClick = this.onClick.bind(this);
     this.field.addEventListener("click", (event) => {
-      this.onClick(event);
+      this.onFieldClickListener(event);
     });
+    this.started = true;
   }
 
-  init() {
+  setStarted(isStart) {
+    this.started = isStart;
+  }
+
+  init(carrotCount, bugCount) {
     this.field.innerHTML = "";
-    this.addItem("carrot", this.carrotCount, "../img/carrot.png");
-    this.addItem("bug", this.bugCount, "../img/bug.png");
+    this.started = true;
+    this.addItem("carrot", carrotCount, "../img/carrot.png");
+    this.addItem("bug", bugCount, "../img/bug.png");
   }
 
   setClickListner(onItemClick) {
@@ -33,9 +40,10 @@ export class Field {
 
   addItem(className, count, imgPath) {
     const x1 = 0;
-    const y1 = 0;
+    const y1 = this.field.offsetTop + FIELD_TOP_PADDING;
     const x2 = this.fieldRect.width - IMG_SIZE;
-    const y2 = this.fieldRect.height - IMG_SIZE;
+    const y2 = this.field.offsetTop + this.fieldRect.height - IMG_SIZE;
+
     for (let i = 0; i < count; i++) {
       const item = document.createElement("img");
       item.setAttribute("class", className);
@@ -45,16 +53,21 @@ export class Field {
       const y = randomNumber(y1, y2);
       item.style.left = `${x}px`;
       item.style.top = `${y}px`;
+      item.style.userDrag = "none";
       this.field.appendChild(item);
     }
   }
 
   //   onClick = (event) => {}
-  onClick(event) {
+  onFieldClickListener(event) {
+    if (!this.started) {
+      return;
+    }
+
     const target = event.target;
     if (target.matches(".carrot")) {
-      target.remove();
       sound.playCarrot();
+      target.remove();
       this.onItemClick && this.onItemClick(ItemType.carrot);
     } else if (target.matches(".bug")) {
       this.onItemClick && this.onItemClick(ItemType.bug);

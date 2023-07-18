@@ -20,20 +20,44 @@
   </head>
   <body>
     <section class="game">
+      <section class="game__level__container">
+        <span>Stage: </span>
+        <span class="game__level">0</span>
+      </section>
       <header class="game__header">
         <button class="game__button">
           <i class="fa-solid fa-play"></i>
         </button>
-        <span class="game__timer">0:0</span>
-        <span class="game__score">9</span>
+        <span class="game__timer">00:00</span>
+        <div class="game__description">
+          <div class="game__score__container">
+            <span>Remaining Carrot: </span>
+            <span class="game__score">0</span>
+          </div>
+        </div>
       </header>
       <section class="game__field"></section>
     </section>
     <section class="pop-up pop-up--hide">
-      <button class="pop-up__refresh">
-        <i class="fa-sharp fa-solid fa-arrow-rotate-right"></i>
-      </button>
-      <span class="pop-up__message">Hello</span>
+      <div class="pop-up__button--container">
+        <button class="pop-up__before">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="pop-up__refresh">
+          <i class="fa-sharp fa-solid fa-arrow-rotate-right"></i>
+        </button>
+        <button class="pop-up__next">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </div>
+      <span class="pop-up__message"></span>
+    </section>
+    <section class="ending-pop-up pop-up--end">
+      <span class="end-message">Congratulation!</span>
+      <div class="end-button-container">
+        <button class="end-reset">Reset</button>
+        <button class="end-replay">Replay</button>
+      </div>
     </section>
   </body>
 </html>
