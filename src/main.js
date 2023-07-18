@@ -42,7 +42,6 @@ game.setGameStopListner((reason) => {
     default:
       break;
   }
-
   gameFinishBanner.showWithText(message);
 });
 
@@ -64,6 +63,7 @@ gameFinishBanner.setClickListner((clicked) => {
       reset();
       break;
     default:
+      gameFinishBanner.setIsEnd(false);
       break;
   }
 
@@ -75,7 +75,7 @@ gameFinishBanner.setClickListner((clicked) => {
 });
 
 function reset() {
-  gameDuration = 90;
+  gameDuration = 155;
   carrotCount = 3;
   bugCount = 2;
   gameLevel = 1;
