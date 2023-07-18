@@ -48,6 +48,7 @@ export class Field {
       const item = document.createElement("img");
       item.setAttribute("class", className);
       item.setAttribute("src", imgPath);
+      item.setAttribute("alt", className);
       item.style.position = "absolute";
       const x = randomNumber(x1, x2);
       const y = randomNumber(y1, y2);
