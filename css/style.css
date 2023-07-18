@@ -5,6 +5,7 @@
 body {
   text-align: center;
   background-color: black;
+  overflow: hidden;
 }
 
 button {
@@ -142,13 +143,14 @@ button {
 }
 
 .ending-pop-up {
+  position: relative;
   width: 400px;
   height: 124px;
   margin: auto;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  transform: translateY(-140%);
+  transform: translateY(-150%);
   border-radius: 20px;
 }
 
