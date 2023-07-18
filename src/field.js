@@ -30,8 +30,8 @@ export class Field {
   init(carrotCount, bugCount) {
     this.field.innerHTML = "";
     this.started = true;
-    this.addItem("carrot", carrotCount, "../img/carrot.png");
-    this.addItem("bug", bugCount, "../img/bug.png");
+    this.addItem("carrot", carrotCount, "img/carrot.png");
+    this.addItem("bug", bugCount, "img/bug.png");
   }
 
   setClickListner(onItemClick) {
