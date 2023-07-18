@@ -97,15 +97,12 @@ button {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  transform: translateY(-140%);
+  transform: translateY(-150%);
   border-radius: 20px;
 }
 
+.pop-up--hide,
 .pop-up--end {
-  display: none;
-}
-
-.pop-up--hide {
   display: none;
 }
 
@@ -191,7 +188,6 @@ button {
 .pop-up__message {
   display: block;
   font-size: 38px;
-  margin-top: 10px;
 }
 
 .carrot,
