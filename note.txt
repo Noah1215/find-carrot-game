@@ -1,0 +1,39 @@
+!! what I learned !!
+
+//HTML
+1. favicon
+- A favicon is a small image displayed next to the page title in the browser tab.
+=> Its main purpose is to help visitors locate a page easier when users have multiple tabs open.
+=> If there is no favicon in html, there is an error for favicon like this(GET http://127.0.0.1:5500/favicon.ico 404 (Not Found))
+
+//css
+1. background center/cover
+(https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+- it means background-position: center, background-size: cover.
+
+2. 'display: none' vs 'visibility: hidden'
+- both properties make elements invisible.
+=> 'display:none' turs off the layout and doesn't render elements, but 'visibility:hidden' renders and hides elements without changing layouts.
+
+3. why using builder pattern
+- The most common motivation for using Builder is to simplify client code that creates
+  complex objects.
+=> It clearly distinguishes between essential and optional factors for creating objects.
+
+4. what is bind() e.g) function.prototype.bind()
+- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+=> If not bind, this will be not included and not passed.
+=> or can use arrow functions.
+
+5. object.freeze()
+- Freezing an object prevents extensions and makes existing properties non-writable and non-configurable.
+=> It prevents mistakes and any changes.
+
+6. 'use strict'
+(https://www.w3schools.com/js/js_strict.asp#)
+- In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+7. Audio()
+(https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio)
+- The Audio() constructor creates and returns a new HTMLAudioElement which can be either attached to a document for the user to interact with and/or listen to, or can be used offscreen to manage and play audio.
+
